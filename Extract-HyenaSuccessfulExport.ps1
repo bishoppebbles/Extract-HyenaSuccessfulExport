@@ -9,9 +9,6 @@
     The name of the output file to write results to.
 .PARAMETER SearchString
     The search string to use.
-.NOTES
-    Version 1.0 - Last Modified: 19 JULY 2018
-    Sam Pursglove
 .EXAMPLE
     Extract-HyenaSuccessfulExport.ps1 Export.log
 
@@ -24,6 +21,9 @@
     Extract-HyenaSuccessfulExport.ps1 Export.log Output.dat ERROR
     
     All script options are positional so the use of explicit flags is not mandatory.  This specifies a Hyena log with the 'Log Failed Operations' option enabled called 'Export.log', an output file named 'Output.dat', and a search string of 'ERROR'.  This returns a list of the systems that failed during the scan and cannot be used as input to the 'Skip Computers List' in Hyena.
+.NOTES
+    Version 1.0 - Last Modified: 12 OCT 2018
+    Sam Pursglove
 #>
 
 param 
@@ -36,7 +36,7 @@ param
 
     [Parameter(Mandatory=$false,
                ValueFromPipeline=$false,
-               HelpMessage='Name of the file to save the systems that Hyena successfully scanned.  The default file name is export_succsess.txt')]
+               HelpMessage='Name of the file to save the systems that Hyena successfully scanned.  The default file name is export_success.dat')]
     [string]$OutputFile = 'export_success.dat',
 
     [Parameter(Mandatory=$false,
